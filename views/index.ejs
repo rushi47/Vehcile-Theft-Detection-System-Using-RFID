@@ -1,0 +1,125 @@
+<script type="text/javascript">
+  function populate(s1,s2){
+  var s1 = document.getElementById(s1);
+  var s2 = document.getElementById(s2);
+  s2.innerHTML = "";
+  if(s1.value == "MarutiSuzuki"){
+    var optionArray = ["|","alto|Alto", "ciaz|Ciaz", "swift|Swift", "wagonar|Wagonar" ];
+  } else if(s1.value == "Hyundai"){
+    var optionArray = ["|", "creta|Creta", "eon|Eon", "i10|i10", "verna|Verna"];
+  } else if(s1.value == "Ford"){
+    var optionArray = ["|","aspire|Aspire", "ecosport|Ecosport", "endevour|Endevour", "figo|Figo", "mustang|Mustang"];
+  }
+  else if(s1.value == "Chevrolet"){
+    var optionArray = ["|","tavera|Tavera", "beat|Beat", "cruze|Cruze", "sail|Sail"];
+  }
+  else if(s1.value == "Honda"){
+    var optionArray = ["|","amaze|Amaze", "brio|Brio", "jazz|Jazz", "br-V|Br-V", "cr-V|CR-V", "city|City", "accord|Accord"];
+  }
+
+  for(var option in optionArray){
+    var pair = optionArray[option].split("|");
+    var newOption = document.createElement("option");
+    newOption.value = pair[0];
+    newOption.innerHTML = pair[1];
+    s2.options.add(newOption);
+  }
+}
+</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> 
+
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>body {
+    background-color: lightblue;
+}
+.thumbnail{
+    width:500px;
+}
+
+.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
+
+<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+
+<div class="thumbnail" style="width:30%; margin:50px auto;">
+ <div class="bootstrap-iso">  
+    <div class="container-fluid">
+  <div class="row">
+   <div class="col-md-12 col-sm-6 col-xs-12">
+       <h1 style="text-align:center">Please Fill Your Details</h1>
+
+<!--=============FORM===================-->
+    <form method="POST" action="/" style=" margin:20px auto ;">
+     <div class="form-group ">
+      <label class="control-label requiredField" for="name">
+       Name of Vehicle Owner <span class="asteriskField">*</span>  
+       
+      </label><input class="form-control" id="name" name="veh[name]" placeholder="Full Name" type="text"/>
+     </div>
+
+     <div class="form-group ">
+      <label class="control-label requiredField" for="vehm">
+       Vehicle Manufacturer<span class="asteriskField">*</span>
+       </label>  
+
+             <select class="form-control" id="slct1" name="veh[vehm]" onchange="populate(this.id,'slct2')">
+                  <option value=""></option>
+                  <option value="MarutiSuzuki">Maruti Suzuki</option>
+                  <option value="Hyundai">Dodge</option>
+                  <option value="Ford">Ford</option>
+                  <option value="Chevrolet">Chevrolet</option>
+                  <option value="Honda">Honda</option>
+              </select>
+      </div>
+
+
+     <div class="form-group ">
+      <label class="control-label requiredField" for="veh">
+       Vehicle Model <span class="asteriskField">
+        *
+       </span></label>
+       <select class="form-control" id="slct2" name="veh[veh]"> </select>
+      </div>
+
+     
+     <div class="form-group ">
+      <label class="control-label requiredField" for="vehn">
+       Vehicle Number
+       <span class="asteriskField">
+        *
+       </span></label><input class="form-control" id="vehn" name="veh[vehn]" placeholder="MH 14 AB 123" type="text"/>
+    </div>
+    
+    
+     <div class="form-group ">
+      <label class="control-label requiredField" for="vehl">
+       Location of Theft
+       <span class="asteriskField">
+        *
+       </span></label> <textarea class="form-control" cols="40" id="vehl" name="veh[vehl]" placeholder="Area in which theft occured" rows="3"></textarea>
+     </div>
+    
+    
+     <div class="form-group ">
+      <label class="control-label requiredField" for="date">
+       Date of Theft
+       <span class="asteriskField">
+        *
+       </span>  </label><input type="date" max="26/04/2017" class="form-control" id="date" name="veh[date]" placeholder="MM/DD/YYYY" type="text"/>
+     </div>
+    
+    
+     <div class="form-group text-center">
+      <div>
+       <button class="btn btn-primary  center" style="text-align:center; width:200px;" >
+        Submit
+       </button>
+      </div>
+     </div>
+    </form>
+   </div>
+  </div>
+ </div>
+</div>
+   
+    
+</div>         

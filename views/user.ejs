@@ -1,0 +1,28 @@
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
+<div class="container">
+<h2>All User Data</h2>  
+        <% user.forEach(function(user){ %>
+             <table class="table table-striped">
+             <thead>
+                  <tr>
+                    <th>Name of Owner</th>
+                    <th>Date of Theft</th>
+                    <th>Status</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.date %></td>
+                    <td><a href="/user/<%= user._id %>">View Status</a></td>
+                  </tr>
+      
+              </tbody>
+              </table>
+        <% }); %>
+</div>

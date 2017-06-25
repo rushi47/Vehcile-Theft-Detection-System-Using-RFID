@@ -1,0 +1,18 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Project of Final Year",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rushi47",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.0"
+  }
+}

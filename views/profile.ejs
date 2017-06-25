@@ -1,0 +1,65 @@
+<!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> 
+
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>body {
+    background-color: lightblue;
+}
+.thumbnail{
+    width:500px;
+}
+
+
+.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
+
+<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+
+<div class="thumbnail" style="width:30%; margin:50px auto;">
+ <div class="bootstrap-iso">  
+    <div class="container-fluid">
+  <div class="row">
+   <div class="col-md-12 col-sm-6 col-xs-12">
+       <h1 style="text-align:center">Welcome <%= profile.name %></h1>
+    <form method="post" action="/" style=" margin:20px auto ;">
+    
+     <div class="form-group ">
+      <label class="control-label requiredField" for="vehm">
+       Vehicle Manufacturer</label><input class="form-control" id="vehm" name="veh[vehm]" value="<%=profile.vehm %>" />
+       
+      
+      
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="veh">
+       Vehicle Model </label><input class="form-control" id="veh" name="veh[veh]" value="<%=profile.veh%>"/>
+      
+      
+      
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="vehn">
+       Vehicle Number
+      </label><input class="form-control" id="vehn" name="veh[vehn]" value="<%=profile.vehn %>"/>
+      
+      
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="vehl">
+       Location of Theft
+       </label> <input class="form-control" cols="40" id="vehl" name="veh[vehl]" value="<%=profile.vehl %>"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label requiredField" for="date">
+       Date of Theft
+        </label><input class="form-control" id="date" name="veh[date]" value="<%=profile.date %>" />
+     </div>
+    </form>
+    <a href="/find %>""> Check the Status of vehicle</a>
+   </div>
+  </div>
+ </div>
+</div>
+   
+    
+</div>         
+ 
